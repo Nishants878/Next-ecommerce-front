@@ -1,6 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import PropTypes from 'prop-types';
+import NProgress from 'nprogress';
+import Router from 'next/router';
 import Page from '../components/Page';
+// TOdo: swap with our own
+
+import '../components/styles/nprogress.css';
+
+// starting nprogress
+Router.events.on('routeChangeStart', () => NProgress.start());
+// ending nprogress bar
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 export default function MyApp({ Component, pageProps }) {
   return (
