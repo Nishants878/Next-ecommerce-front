@@ -30,9 +30,7 @@ export default function RequestReset() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(inputs);
     await signup().catch(console.error);
-    console.log({ data, loading, error });
     resetForm();
   };
   //   const error =

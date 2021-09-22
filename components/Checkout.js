@@ -58,7 +58,6 @@ function CheckoutForm() {
 
     e.preventDefault();
     setLoading(true);
-    console.log('we gotta do some work');
 
     // 2. Start the page transition
     nProgress.start();
@@ -67,7 +66,6 @@ function CheckoutForm() {
       type: 'card',
       card: elements.getElement(CardElement),
     });
-    console.log(paymentMethod);
     // 4. Handle any errors from stripe
     if (error) {
       setError(error);
@@ -81,7 +79,6 @@ function CheckoutForm() {
       },
     });
     console.log(`finished with the order`);
-    console.log(order);
     // 6. Change the page the view the order
     router.push({
       pathname: `/order/[id]`,
